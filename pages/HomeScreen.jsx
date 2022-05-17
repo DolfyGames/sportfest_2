@@ -7,7 +7,7 @@ const HomeScreen = ({ navigation }) => {
     <View>
       <div className="navbar">
         <Button
-          title="Schüler Listen"
+          title="Schülerlisten"
           onPress={() => navigation.navigate("Schuelerlisten")}
         />
         <Button
