@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import Style from "./styles.css";
+import schueler from "../data/Schuelerliste.json";
 
 const Schuelerlisten = ({ navigation }) => {
   return (

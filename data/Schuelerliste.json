@@ -1,4 +1,4 @@
-{
+{"klassen":[{"klasse": "5",
   "schueler": [
     {
       "schueler": {
@@ -9,5 +9,5 @@
         "geschlecht": "männlich"
       }
     }
-  ]
+  ]}]
 }
