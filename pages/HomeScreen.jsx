@@ -23,6 +23,18 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Auswertung")}
         />
       </div>
+
+      <div>
+        <div>
+          <Text>Status</Text>
+        </div>
+        <div>
+          <Text>Aktuelles Klassen Ranking</Text>
+        </div>
+        <div>
+          <Text>Aktuelles Schülerranking</Text>
+        </div>
+      </div>
     </View>
   );
 };
