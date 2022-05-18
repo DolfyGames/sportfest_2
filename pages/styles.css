@@ -6,11 +6,13 @@
 
 .klassenkontainer{
   display: flex;
+  flex-direction: column;
 }
 .klassenstufenkontainer{
   display: flex;
+  flex-direction: row;
 }
 .klasse {
-
-
+  display: flex;
+  
 }
