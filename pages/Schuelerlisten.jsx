@@ -33,7 +33,7 @@ const Schuelerlisten = ({ navigation }) => {
         klassenstufen unter einenander */
         /** über all einen knopf für das laden
   von json listen oder so **/}
-        <>{schuelerlst}</>
+        <Schuelerlst/>
       </div>
     </View>
   );
@@ -41,14 +41,14 @@ const Schuelerlisten = ({ navigation }) => {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default Schuelerlisten;
 
-const schuelerlst = () => {
-  console.log(JSON.stringify(schueler));
-  const klassen = schueler.klassenstufen.map((x) => {
+var Schuelerlst = () => {
+  var klassen = schueler.klassenstufen.map((x) => {
     var klassenstufen = (
-      <div className="klassenstufe">
+      <div key={x} className="klassenstufe">
+        <Text>{x.klassenstufe}</Text>
         {x.klassen.map((y) => {
           var klassen_ = (
-            <div className="klasse">
+            <div key={y}className="klasse">
               <Text>{y.klasse}</Text>
             </div>
           );

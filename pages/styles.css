@@ -7,12 +7,14 @@
 .klassenkontainer{
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 .klassenstufenkontainer{
   display: flex;
   flex-direction: row;
+  padding: 10px;
 }
 .klasse {
   display: flex;
-  
+  padding: 10px;
 }
