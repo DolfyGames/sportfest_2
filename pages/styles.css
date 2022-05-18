@@ -3,3 +3,14 @@
   flex-direction: row;
   flex-grow: 4;
 }
+
+.klassenkontainer{
+  display: flex;
+}
+.klassenstufenkontainer{
+  display: flex;
+}
+.klasse {
+
+
+}

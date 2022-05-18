@@ -33,5 +33,10 @@ const Schuelerlisten = ({ navigation }) => {
     </View>
   );
 };
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default Schuelerlisten;
+
+const schuelerlst = ()=> {
+  const klassen = schueler.klassen.map(x =><div className="klasse"><Text>x.klasse</Text></div> );
+  return klassen;
+}
