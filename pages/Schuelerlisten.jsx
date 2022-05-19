@@ -1,9 +1,10 @@
-import React from "react";
-import { View, Text, Button, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Button, TouchableOpacity, Modal } from "react-native";
 import Style from "./styles.css";
 import schueler from "../data/Schuelerliste.json";
 
 const Schuelerlisten = ({ navigation }) => {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View>
       <div className="navbar">
@@ -24,11 +25,23 @@ const Schuelerlisten = ({ navigation }) => {
           onPress={() => navigation.navigate("Auswertung")}
         />
       </div>
+      <div className="popup">
+      <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+        <AddButton className="addButton"onPress={() => setModalVisible(!modalVisible)}title="close"/>
 
+        </Modal>
+        </div>
       <div className="klassenkontainer">
         <div className="infobar">
           <Text>Klassenstufen</Text> 
-          <AddButton className="addButton"onPress={()=> {}}title="+"/>
+          <AddButton className="addButton"onPress={() => setModalVisible(true)}title="+"/>
         </div>
         <Schuelerlst/>
       </div>
