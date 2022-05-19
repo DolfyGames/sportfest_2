@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, TouchableOpacity } from "react-native";
 import Style from "./styles.css";
 import schueler from "../data/Schuelerliste.json";
 
@@ -26,13 +26,10 @@ const Schuelerlisten = ({ navigation }) => {
       </div>
 
       <div className="klassenkontainer">
-        {/** Klassen anzeigen + knopf für das hinzufügen von klassen und das
-        einland von json datein oder so */
-        /** Klassen anzeigen, nach
-        klassenstuffen listen klassen einer Klassenstufe nebeneinander,
-        klassenstufen unter einenander */
-        /** über all einen knopf für das laden
-  von json listen oder so **/}
+        <div className="infobar">
+          <Text>Klassenstufen</Text> 
+          <AddButton className="addButton"onPress={()=> {}}title="+"/>
+        </div>
         <Schuelerlst/>
       </div>
     </View>
@@ -44,8 +41,8 @@ export default Schuelerlisten;
 var Schuelerlst = () => {
   var klassen = schueler.klassenstufen.map((x) => {
     var klassenstufen = (
-      <div key={x} className="klassenstufe">
-        <Text>{x.klassenstufe}</Text>
+      <div key={x} className="klassenstufenkontainer">
+        <Text>Klassenstufe: {x.klassenstufe}</Text>
         {x.klassen.map((y) => {
           var klassen_ = (
             <div key={y}className="klasse">
@@ -54,9 +51,20 @@ var Schuelerlst = () => {
           );
           return klassen_;
         })}
+        <AddButton className="addButton"onPress={()=> {}}title="+"/>
       </div>
+
     );
     return klassenstufen;
   });
   return klassen;
 };
+
+
+const AddButton = ({ className, onPress, title }) => (
+  <div className={className}>
+  <TouchableOpacity onPress={onPress}>
+      <Text >{title}</Text>
+  </TouchableOpacity>
+  </div>
+);

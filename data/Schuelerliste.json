@@ -17,6 +17,21 @@
               }
             }
           ]
+        },
+        {
+          "klassenstufe": "5",
+          "klasse": "5b",
+          "schueler": [
+            {
+              "schueler": {
+                "name": "Hans Gustaf",
+                "id": "1234",
+                "klasse": "5a",
+                "geburtsdatum": "07.03.2005",
+                "geschlecht": "männlich"
+              }
+            }
+          ]
         }
       ]
     }

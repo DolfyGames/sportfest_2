@@ -11,7 +11,7 @@ const AppNavigator = createStackNavigator(
     Schuelerlisten: SchuelerListen
   },
   {
-    initialRouteName: "Home" // muss dann wieder Login werden
+    initialRouteName: "Schuelerlisten" // muss dann wieder Login werden
   }
 );
 
