@@ -5,6 +5,8 @@ import schueler from "../data/Schuelerliste.json";
 
 const Schuelerlisten = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  var modalcontent = () => {var content = (<div><AddButton className="addButton"onPress={() => setModalVisible(!modalVisible)}title="close"/></div>);
+                            return content;};
   return (
     <View>
       <div className="navbar">
@@ -34,14 +36,19 @@ const Schuelerlisten = ({ navigation }) => {
             setModalVisible(!modalVisible);
           }}
         >
-        <AddButton className="addButton"onPress={() => setModalVisible(!modalVisible)}title="close"/>
+        {modalcontent}
 
         </Modal>
         </div>
       <div className="klassenkontainer">
         <div className="infobar">
           <Text>Klassenstufen</Text> 
-          <AddButton className="addButton"onPress={() => setModalVisible(true)}title="+"/>
+          <AddButton className="addButton"onPress={() => {setModalVisible(true);
+                                                            var modalcontent = () => {
+                                                              var content = (<div>
+                                                                <AddButton className="addButton"onPress={() => setModalVisible(!modalVisible)}title="close"/>
+                                                              </div>); 
+                                                            }}}title="+"/>
         </div>
         <Schuelerlst/>
       </div>
