@@ -5,8 +5,10 @@ import schueler from "../data/Schuelerliste.json";
 
 const Schuelerlisten = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  var modalcontent = () => {var content = (<div><AddButton className="addButton"onPress={() => setModalVisible(!modalVisible)}title="close"/></div>);
-                            return content;};
+  var modalcontent = () => {
+    var content = (<div><AddButton className="addButton" onPress={() => setModalVisible(!modalVisible)} title="close" /></div>);
+    return content;
+  };
   return (
     <View>
       <div className="navbar">
@@ -28,7 +30,7 @@ const Schuelerlisten = ({ navigation }) => {
         />
       </div>
       <div className="popup">
-      <Modal
+        <Modal
           animationType="slide"
           transparent={true}
           visible={modalVisible}
@@ -36,21 +38,24 @@ const Schuelerlisten = ({ navigation }) => {
             setModalVisible(!modalVisible);
           }}
         >
-        {modalcontent}
+          {modalcontent}
 
         </Modal>
-        </div>
+      </div>
       <div className="klassenkontainer">
         <div className="infobar">
-          <Text>Klassenstufen</Text> 
-          <AddButton className="addButton"onPress={() => {setModalVisible(true);
-                                                            var modalcontent = () => {
-                                                              var content = (<div>
-                                                                <AddButton className="addButton"onPress={() => setModalVisible(!modalVisible)}title="close"/>
-                                                              </div>); 
-                                                            }}}title="+"/>
+          <Text>Klassenstufen</Text>
+          <AddButton className="addButton" onPress={() => {
+            setModalVisible(true);
+            var modalcontent = () => {
+              var content = (<div>
+                <AddButton className="addButton" onPress={() => setModalVisible(!modalVisible)} title="close" />
+              </div>);
+              return content;
+            }
+          }} title="+" />
         </div>
-        <Schuelerlst/>
+        <Schuelerlst />
       </div>
     </View>
   );
@@ -65,13 +70,13 @@ var Schuelerlst = () => {
         <Text>Klassenstufe: {x.klassenstufe}</Text>
         {x.klassen.map((y) => {
           var klassen_ = (
-            <div key={y}className="klasse">
+            <div key={y} className="klasse">
               <Text>{y.klasse}</Text>
             </div>
           );
           return klassen_;
         })}
-        <AddButton className="addButton"onPress={()=> {}}title="+"/>
+        <AddButton className="addButton" onPress={() => { }} title="+" />
       </div>
 
     );
@@ -83,8 +88,8 @@ var Schuelerlst = () => {
 
 const AddButton = ({ className, onPress, title }) => (
   <div className={className}>
-  <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress}>
       <Text >{title}</Text>
-  </TouchableOpacity>
+    </TouchableOpacity>
   </div>
 );
